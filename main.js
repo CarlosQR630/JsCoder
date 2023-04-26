@@ -38,10 +38,11 @@ if (producto ==="d"){
                 let subtotal1 = subtotalProductos(cantidad1,modeloDama);
                 let precioIva1 = iva(subtotal1,impuesto);
                 let formaPago1 = prompt("Forma de pago:      Teclee:(e)Efectivo con 10% descuento,       Teclee:(mp)MercadoPago ,          Teclee:(t) Tarjeta Débito/Crédito          (ESC)finalizar compra ");
-                if (formaPago1 === "e"){
+                if (formaPago1 === "e" && formaPago1 != "ESC"){
                     let precioFinal1 = iva((pagoEfectivo(subtotal1,descuento)),impuesto);
-                    alert(`Precio anterior: ${precioIva1}   Precio final Efectivo: ${precioFinal1} `);
-                }else {
+                    alert(`Precio anterior: ${precioIva1}   Precio final Efectivo: ${precioFinal1} `);                    
+
+                }else if (formaPago1 === "mp" || formaPago1 === "t"){
                     while (formaPago1 != "ESC"){
                         switch (formaPago1){
                             case "mp":
@@ -57,7 +58,6 @@ if (producto ==="d"){
                                         let valorCuota3 = cuotasIndividual(precioFinalTarjeta3,cantCuotas1);
                                         
                                         alert(`El monto final de su compra es de: ${precioFinalTarjeta3} pesos a pagar en: ${cantCuotas1} cuotas de ${valorCuota3} C/U.`);
-
                                     break;
 
                                     case 6:
@@ -66,7 +66,6 @@ if (producto ==="d"){
                                         let valorCuota6 = cuotasIndividual(precioFinalTarjeta6,cantCuotas1);
                                         
                                         alert(`El monto final de su compra es de: ${precioFinalTarjeta6} pesos a pagar en: ${cantCuotas1} cuotas de ${valorCuota6} C/U.`);
-
                                     break;
 
                                     case 9:
@@ -75,27 +74,25 @@ if (producto ==="d"){
                                         let valorCuota9 = cuotasIndividual(precioFinalTarjeta9,cantCuotas1);
                                         
                                         alert(`El monto final de su compra es de: ${precioFinalTarjeta9} pesos a pagar en: ${cantCuotas1} cuotas de ${valorCuota9} pesos C/U.`);
-
                                     break;
 
                                     default:
                                         alert("Operación inválida");
-                                    break;                                                                   
-
+                                    break;
                                 }
                             break;
 
                             default:
                                 alert("comando incorrecto");
                             break;
-
                         }
-
-                        formaPago2 = prompt("Forma de pago:      Teclee:(e)Efectivo con 10% descuento,       Teclee:(mp)MercadoPago ,          Teclee:(t) Tarjeta Débito/Crédito          (ESC)finalizar compra ");
-
-                        
+                        formaPago1 = prompt("(ESC)finalizar compra ");                        
                     }
                     
+                }else if (formaPago1 === "ESC"){
+                    alert("Dirigiendo a menú anterior")
+                } else {
+                    alert ("Comando incorrecto")
                 }
 
             break;
@@ -106,10 +103,10 @@ if (producto ==="d"){
                 let subtotal2 = subtotalProductos(cantidad2,modeloDama);
                 let precioIva2 = iva(subtotal2,impuesto);
                 let formaPago2 = prompt("Forma de pago:      Teclee:(e)Efectivo con 10% descuento,       Teclee:(mp)MercadoPago ,          Teclee:(t) Tarjeta Débito/Crédito          (ESC)finalizar compra ");
-                if (formaPago2 === "e"){
+                if (formaPago2 === "e" && formaPago2 != "ESC"){
                     let precioFinal2 = iva((pagoEfectivo(subtotal2,descuento)),impuesto);
                     alert(`Precio anterior: ${precioIva2}   Precio final Efectivo: ${precioFinal2} `);
-                }else {
+                }else if (formaPago2 === "mp" || formaPago2 === "t"){
                     while (formaPago2 != "ESC"){
                         switch (formaPago2){
                             case "mp":
@@ -148,22 +145,21 @@ if (producto ==="d"){
 
                                     default:
                                         alert("Operación inválida");
-                                    break;                                                                   
-
+                                    break; 
                                 }
                             break;
 
                             default:
                                 alert("comando incorrecto");
                             break;
-
                         }
-
-                        formaPago2 = prompt("Forma de pago:      Teclee:(e)Efectivo con 10% descuento,       Teclee:(mp)MercadoPago ,          Teclee:(t) Tarjeta Débito/Crédito          (ESC)finalizar compra ");
-
-                        
+                        formaPago2 = prompt("(ESC)finalizar compra ");                        
                     }
                 
+                }else if (formaPago2 === "ESC"){
+                    alert("Dirigiendo a menú anterior")
+                } else {
+                    alert ("Comando incorrecto")
                 }
                 
             break;
@@ -174,10 +170,10 @@ if (producto ==="d"){
                 let subtotal3 = subtotalProductos(cantidad3,modeloDama);
                 let precioIva3 = iva(subtotal3,impuesto);
                 let formaPago3 = prompt("Forma de pago:      Teclee:(e)Efectivo con 10% descuento,       Teclee:(mp)MercadoPago ,          Teclee:(t) Tarjeta Débito/Crédito          (ESC)finalizar compra ");
-                if (formaPago3 === "e"){
+                if (formaPago3 === "e" && formaPago3 != "ESC"){
                     let precioFinal3 = iva((pagoEfectivo(subtotal3,descuento)),impuesto);
                     alert(`Precio anterior: ${precioIva3}   Precio final Efectivo: ${precioFinal3} `);
-                }else {
+                }else if (formaPago3 === "mp" || formaPago3 === "t"){
                     while (formaPago3 != "ESC"){
                         switch (formaPago3){
                             case "mp":
@@ -216,8 +212,7 @@ if (producto ==="d"){
 
                                     default:
                                         alert("Operación inválida");
-                                    break;                                                                   
-
+                                    break; 
                                 }
                             break;
 
@@ -226,12 +221,13 @@ if (producto ==="d"){
                             break;
 
                         }
-
-                        formaPago3 = prompt("Forma de pago:      Teclee:(e)Efectivo con 10% descuento,       Teclee:(mp)MercadoPago ,          Teclee:(t) Tarjeta Débito/Crédito          (ESC)finalizar compra ");
-
-                        
+                        formaPago3 = prompt("(ESC)finalizar compra ");                        
                     }
                 
+                }else if (formaPago3 === "ESC"){
+                    alert("Dirigiendo a menú anterior")
+                } else {
+                    alert ("Comando incorrecto")
                 }
             break;
 
@@ -253,10 +249,10 @@ if (producto ==="d"){
                     let subtotal1 = subtotalProductos(cantidad1,modeloCaballero);
                     let precioIva1 = iva(subtotal1,impuesto);
                     let formaPago1 = prompt("Forma de pago:      Teclee:(e)Efectivo con 10% descuento,       Teclee:(mp)MercadoPago ,          Teclee:(t) Tarjeta Débito/Crédito          (ESC)finalizar compra ");
-                    if (formaPago1 === "e"){
+                    if (formaPago1 === "e" && formaPago1 != "ESC"){
                         let precioFinal1 = iva((pagoEfectivo(subtotal1,descuento)),impuesto);
                         alert(`Precio anterior: ${precioIva1}   Precio final Efectivo: ${precioFinal1} `);
-                    }else {
+                    }else if (formaPago1 === "mp" || formaPago1 === "t"){
                         while (formaPago1 != "ESC"){
                             switch (formaPago1){
                                 case "mp":
@@ -295,8 +291,7 @@ if (producto ==="d"){
     
                                         default:
                                             alert("Operación inválida");
-                                        break;                                                                   
-    
+                                        break; 
                                     }
                                 break;
     
@@ -304,13 +299,14 @@ if (producto ==="d"){
                                     alert("comando incorrecto");
                                 break;
     
-                            }
-    
-                            formaPago3 = prompt("Forma de pago:      Teclee:(e)Efectivo con 10% descuento,       Teclee:(mp)MercadoPago ,          Teclee:(t) Tarjeta Débito/Crédito          (ESC)finalizar compra ");
-    
-                            
+                            }    
+                            formaPago1 = prompt("(ESC)finalizar compra ");                            
                         }
                     
+                    }else if (formaPago1 === "ESC"){
+                        alert("Dirigiendo a menú anterior")
+                    } else {
+                        alert ("Comando incorrecto")
                     }
 
                 break;
@@ -321,10 +317,10 @@ if (producto ==="d"){
                     let subtotal2 = subtotalProductos(cantidad2,modeloCaballero);
                     let precioIva2 = iva(subtotal2,impuesto);
                     let formaPago2 = prompt("Forma de pago:      Teclee:(e)Efectivo con 10% descuento,       Teclee:(mp)MercadoPago ,          Teclee:(t) Tarjeta Débito/Crédito          (ESC)finalizar compra ");
-                    if (formaPago2 === "e"){
+                    if (formaPago2 === "e" && formaPago2 != "ESC"){
                         let precioFinal2 = iva((pagoEfectivo(subtotal2,descuento)),impuesto);
                         alert(`Precio anterior: ${precioIva2}   Precio final Efectivo: ${precioFinal2} `);
-                    }else {
+                    }else if (formaPago2 === "mp" || formaPago2 === "t"){
                         while (formaPago2 != "ESC"){
                             switch (formaPago2){
                                 case "mp":
@@ -363,22 +359,21 @@ if (producto ==="d"){
     
                                         default:
                                             alert("Operación inválida");
-                                        break;                                                                   
-    
+                                        break;      
                                     }
                                 break;
     
                                 default:
                                     alert("comando incorrecto");
-                                break;
-    
-                            }
-    
-                            formaPago3 = prompt("Forma de pago:      Teclee:(e)Efectivo con 10% descuento,       Teclee:(mp)MercadoPago ,          Teclee:(t) Tarjeta Débito/Crédito          (ESC)finalizar compra ");
-    
-                            
+                                break;    
+                            }    
+                            formaPago2 = prompt("(ESC)finalizar compra ");                         
                         }
                     
+                    }else if (formaPago2 === "ESC"){
+                        alert("Dirigiendo a menú anterior")
+                    } else {
+                        alert ("Comando incorrecto")
                     }
 
                 break;
@@ -389,10 +384,10 @@ if (producto ==="d"){
                     let subtotal3 = subtotalProductos(cantidad3,modeloCaballero);
                     let precioIva3 = iva(subtotal3,impuesto);
                     let formaPago3 = prompt("Forma de pago:      Teclee:(e)Efectivo con 10% descuento,       Teclee:(mp)MercadoPago ,          Teclee:(t) Tarjeta Débito/Crédito          (ESC)finalizar compra ");
-                    if (formaPago3 === "e"){
+                    if (formaPago3 === "e" && formaPago3 != "ESC"){
                         let precioFinal3 = iva((pagoEfectivo(subtotal3,descuento)),impuesto);
                         alert(`Precio anterior: ${precioIva3}   Precio final Efectivo: ${precioFinal3} `);
-                    }else {
+                    }else if (formaPago3 === "mp" || formaPago3 === "t"){
                         while (formaPago3 != "ESC"){
                             switch (formaPago3){
                                 case "mp":
@@ -431,8 +426,7 @@ if (producto ==="d"){
     
                                         default:
                                             alert("Operación inválida");
-                                        break;                                                                   
-    
+                                        break;     
                                     }
                                 break;
     
@@ -440,15 +434,15 @@ if (producto ==="d"){
                                     alert("comando incorrecto");
                                 break;
     
-                            }
-    
-                            formaPago3 = prompt("Forma de pago:      Teclee:(e)Efectivo con 10% descuento,       Teclee:(mp)MercadoPago ,          Teclee:(t) Tarjeta Débito/Crédito          (ESC)finalizar compra ");
-    
-                            
+                            }    
+                            formaPago3 = prompt("(ESC)finalizar compra ");                           
                         }
                     
+                    }else if (formaPago3 === "ESC"){
+                        alert("Dirigiendo a menú anterior")
+                    } else {
+                        alert ("Comando incorrecto")
                     }
-
                 break;
 
                 default:
@@ -470,10 +464,10 @@ if (producto ==="d"){
                         let subtotal1 = subtotalProductos(cantidad1,modeloUnisex);
                         let precioIva1 = iva(subtotal1,impuesto);
                         let formaPago1 = prompt("Forma de pago:      Teclee:(e)Efectivo con 10% descuento,       Teclee:(mp)MercadoPago ,          Teclee:(t) Tarjeta Débito/Crédito          (ESC)finalizar compra ");
-                        if (formaPago1 === "e"){
+                        if (formaPago1 === "e" && formaPago1 != "ESC"){
                             let precioFinal1 = iva((pagoEfectivo(subtotal1,descuento)),impuesto);
                             alert(`Precio anterior: ${precioIva1}   Precio final Efectivo: ${precioFinal1} `);
-                        }else {
+                        }else if (formaPago1 === "mp" || formaPago1 === "t"){
                             while (formaPago1 != "ESC"){
                                 switch (formaPago1){
                                     case "mp":
@@ -512,8 +506,7 @@ if (producto ==="d"){
         
                                             default:
                                                 alert("Operación inválida");
-                                            break;                                                                   
-        
+                                            break;         
                                         }
                                     break;
         
@@ -521,13 +514,15 @@ if (producto ==="d"){
                                         alert("comando incorrecto");
                                     break;
         
-                                }
-        
-                                formaPago3 = prompt("Forma de pago:      Teclee:(e)Efectivo con 10% descuento,       Teclee:(mp)MercadoPago ,          Teclee:(t) Tarjeta Débito/Crédito          (ESC)finalizar compra ");
-        
-                                
+                                }        
+                                formaPago1 = prompt("(ESC)finalizar compra "); 
+
                             }
                         
+                        } else if (formaPago1 === "ESC"){
+                        alert("Dirigiendo a menú anterior")
+                        } else {
+                        alert ("Comando incorrecto")
                         }
     
                     break;
@@ -538,10 +533,10 @@ if (producto ==="d"){
                         let subtotal2 = subtotalProductos(cantidad2,modeloUnisex);
                         let precioIva2 = iva(subtotal2,impuesto);
                         let formaPago2 = prompt("Forma de pago:      Teclee:(e)Efectivo con 10% descuento,       Teclee:(mp)MercadoPago ,          Teclee:(t) Tarjeta Débito/Crédito          (ESC)finalizar compra ");
-                        if (formaPago2 === "e"){
+                        if (formaPago2 === "e" && formaPago2 != "ESC"){
                             let precioFinal2 = iva((pagoEfectivo(subtotal2,descuento)),impuesto);
                             alert(`Precio anterior: ${precioIva2}   Precio final Efectivo: ${precioFinal2} `);
-                        }else {
+                        }else if (formaPago2 === "mp" || formaPago2 === "t"){
                             while (formaPago2 != "ESC"){
                                 switch (formaPago2){
                                     case "mp":
@@ -580,22 +575,22 @@ if (producto ==="d"){
         
                                             default:
                                                 alert("Operación inválida");
-                                            break;                                                                   
-        
+                                            break;      
                                         }
                                     break;
         
                                     default:
                                         alert("comando incorrecto");
-                                    break;
-        
+                                    break;        
                                 }
         
-                                formaPago3 = prompt("Forma de pago:      Teclee:(e)Efectivo con 10% descuento,       Teclee:(mp)MercadoPago ,          Teclee:(t) Tarjeta Débito/Crédito          (ESC)finalizar compra ");
-        
-                                
+                                formaPago2 = prompt("(ESC)finalizar compra ");                               
                             }
                         
+                        }else if (formaPago2 === "ESC"){
+                            alert("Dirigiendo a menú anterior")
+                        } else {
+                            alert ("Comando incorrecto")
                         }
     
                     break;
@@ -606,10 +601,10 @@ if (producto ==="d"){
                         let subtotal3 = subtotalProductos(cantidad3,modeloUnisex);
                         let precioIva3 = iva(subtotal3,impuesto);
                         let formaPago3 = prompt("Forma de pago:      Teclee:(e)Efectivo con 10% descuento,       Teclee:(mp)MercadoPago ,          Teclee:(t) Tarjeta Débito/Crédito          (ESC)finalizar compra ");
-                        if (formaPago3 === "e"){
+                        if (formaPago3 === "e" && formaPago3 != "ESC"){
                             let precioFinal3 = iva((pagoEfectivo(subtotal3,descuento)),impuesto);
                             alert(`Precio anterior: ${precioIva3}   Precio final Efectivo: ${precioFinal3} `);
-                        }else {
+                        }else if (formaPago3 === "mp" || formaPago3 === "t"){
                             while (formaPago3 != "ESC"){
                                 switch (formaPago3){
                                     case "mp":
@@ -648,22 +643,22 @@ if (producto ==="d"){
         
                                             default:
                                                 alert("Operación inválida");
-                                            break;                                                                   
-        
+                                            break;        
                                         }
                                     break;
         
                                     default:
                                         alert("comando incorrecto");
-                                    break;
-        
+                                    break;        
                                 }
         
-                                formaPago3 = prompt("Forma de pago:      Teclee:(e)Efectivo con 10% descuento,       Teclee:(mp)MercadoPago ,          Teclee:(t) Tarjeta Débito/Crédito          (ESC)finalizar compra ");
-        
-                                
+                                formaPago3 = prompt("(ESC)finalizar compra ");                               
                             }
                         
+                        }else if (formaPago3 === "ESC"){
+                            alert("Dirigiendo a menú anterior")
+                        } else {
+                            alert ("Comando incorrecto")
                         }
     
                     break;
@@ -672,8 +667,7 @@ if (producto ==="d"){
                         alert("modelo incorrecto");
                     break;
                 }
-                modeloUnisex = prompt("Ingrese Modelo: a, b , c.      Escriba (ESC) para salir.");
-    
+                modeloUnisex = prompt("Ingrese Modelo: a, b , c.      Escriba (ESC) para salir.");    
             }
         }else{
             alert("Comando incorrecto");
